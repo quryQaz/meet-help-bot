@@ -1,4 +1,4 @@
-from telegram import Bot
+﻿from telegram import Bot
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler
@@ -41,7 +41,7 @@ DelCom=[]
 def do_start(bot,update):
     bot.send_message(
         chat_id=update.message.chat_id,
-        text="GG",
+        text="Для начала игры напишите Start и действуйте согасно инструкциям в задании\n",
     )
 
 def do_echo(bot,update):
