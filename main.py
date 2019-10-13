@@ -186,7 +186,7 @@ def RandAns():
     for i in range(5):
         num=random.randint(0,len(TMP)-1)
         k=random.randint(0,10)
-        if len(DelCom)<5 and k<5:
+        if i==5:
             DelCom.append(AnsTMP[num])
         Com.append(AnsTMP[num])
         AnsTMP.pop(num)
@@ -289,8 +289,6 @@ def Raund3(n,bot,update):
     else:
         print("Com --")
         print(len(Com))
-        if len(DelCom)<5:
-            DelCom.append(Com[n-1])
         Com.pop(n-1)
         res = ""
         for i in range(len(Com)):
