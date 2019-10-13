@@ -32,6 +32,8 @@ global rnd1End,rnd2End,rnd3End,rnd4End
 rnd1End=rnd2End=rnd3End=rnd4End=False
 global IsGameStart
 IsGameStart = False
+global coun
+coun=0
 
 global DelCom
 DelCom=[]
@@ -185,10 +187,6 @@ def RandAns():
     Com=[]
     for i in range(5):
         num=random.randint(0,len(TMP)-1)
-        k=random.randint(0,10)
-        if i==0:
-            print(DelCom)
-            DelCom.append(AnsTMP[num])
         Com.append(AnsTMP[num])
         AnsTMP.pop(num)
         TMP.pop(num)
@@ -196,7 +194,8 @@ def RandAns():
 
 
 def Raund1(n,bot,update):
-    global rnd1End
+    global rnd1End,coun,DelCom
+    print(123123123)
     if len(Com)==2:
         rnd1End=True
         bot.send_message(
@@ -205,6 +204,9 @@ def Raund1(n,bot,update):
         Com[0]+"\n\nКак закончите напишите Готово")
         
     else:
+        if coun==0:
+            DelCom.append(Com[n-1])
+            coun+=1
         Com.pop(n-1)
         res = ""
         for i in range(len(Com)):
@@ -234,7 +236,7 @@ def StartRnd2(bot,update):
     ))
 
 def Raund2(n,bot,update):
-    global rnd1End,rnd2End
+    global rnd1End,rnd2End,coun,DelCom
     print(len(Com))
     if len(Com)==2:
         rnd1End=False
@@ -246,6 +248,9 @@ def Raund2(n,bot,update):
         print("Change-----------------------------------")
         
     else:
+        if coun==1:
+            DelCom.append(Com[n-1])
+            coun+=1
         Com.pop(n-1)
         res = ""
         for i in range(len(Com)):
@@ -277,7 +282,7 @@ def StartRnd3(bot,update):
     ))
 
 def Raund3(n,bot,update):
-    global rnd2End,rnd3End
+    global rnd2End,rnd3End,coun,DelCom
     print("GET rnd3")
     if len(Com)==2:
         bot.send_message(
@@ -288,6 +293,9 @@ def Raund3(n,bot,update):
         rnd3End=True
         
     else:
+        if coun==2:
+            DelCom.append(Com[n-1])
+            coun+=1
         print("Com --")
         print(len(Com))
         Com.pop(n-1)
