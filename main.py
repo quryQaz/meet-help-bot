@@ -323,9 +323,7 @@ def StartRnd4(bot,update):
     text=("Выберите задание, которое хотите исключить: \n1. "+
     DelCom[0]+"\n2. "+
     DelCom[1]+"\n3. "+
-    DelCom[2]+"\n4. "+
-    DelCom[3]+"\n5. "+
-    DelCom[4]+"\n"
+    DelCom[2]+"\n"
     ))
 
 def Raund4(n,bot,update):
