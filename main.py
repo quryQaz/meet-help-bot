@@ -195,7 +195,6 @@ def RandAns():
 
 def Raund1(n,bot,update):
     global rnd1End,coun,DelCom
-    print(123123123)
     if len(Com)==2:
         rnd1End=True
         bot.send_message(
@@ -310,6 +309,9 @@ def Raund3(n,bot,update):
 
 def StartRnd4(bot,update):
     global rnd3,rnd4,DelCom
+    bot.send_message(
+    chat_id=update.message.chat_id,
+    text=DelCom)    
     rnd3=False
     rnd4=True
     print('Start4')
