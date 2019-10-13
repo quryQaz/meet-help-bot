@@ -186,7 +186,7 @@ def RandAns():
     for i in range(5):
         num=random.randint(0,len(TMP)-1)
         k=random.randint(0,10)
-        if i==5:
+        if i==0:
             DelCom.append(AnsTMP[num])
         Com.append(AnsTMP[num])
         AnsTMP.pop(num)
